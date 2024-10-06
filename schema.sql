@@ -7,6 +7,7 @@ CREATE TABLE customers (
  phone_number VARCHAR(20),
  shipping_address VARCHAR(255)
 );
+
 -- Create Products Table
 CREATE TABLE products (
  product_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -16,6 +17,7 @@ CREATE TABLE products (
  stock_quantity INT,
  category VARCHAR(100)
 );
+
 -- Create Orders Table
 CREATE TABLE orders (
  order_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -25,6 +27,7 @@ CREATE TABLE orders (
  total_amount DECIMAL(10, 2),
  FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 );
+
 -- Create Order Items Table
 CREATE TABLE order_items (
  order_item_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -35,6 +38,7 @@ CREATE TABLE order_items (
  FOREIGN KEY (order_id) REFERENCES orders(order_id),
  FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
+
 -- Create Payments Table
 CREATE TABLE payments (
  payment_id INT AUTO_INCREMENT PRIMARY KEY,
